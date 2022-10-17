@@ -384,8 +384,16 @@ img {
 	font-weight: bold;
 	font-style: normal;
 	font-size: 60px;
-	margin: 32px 0;
+	margin: 32px 0 10px 0;
 	color: #674ea7;
+}
+
+.name-1 {
+	margin: 32px 0 10px 0 !important;
+}
+
+.name-2 {
+	margin: 10px 0 10px 0 !important;
 }
 
 .title h2 {
@@ -577,3 +585,4 @@ a {
 	font-size: 12px;
 	letter-spacing: 0pt;
 }
+
