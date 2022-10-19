@@ -16,8 +16,8 @@ function togglePlay() {
         soundIcon.addClass('fa-volume-up');
     } else {
         myAudio.pause()
-        soundIcon.addClass('fa-volume-off');
         soundIcon.removeClass('fa-volume-up');
+        soundIcon.addClass('fa-volume-off');
     }
 };
 
@@ -29,7 +29,8 @@ $(document).on('click', function () {
 });
 
 
-soundButton.on('click', function () {
+soundButton.on('click', function (e) {
+    e.preventDefault();
     togglePlay()
 });
 
