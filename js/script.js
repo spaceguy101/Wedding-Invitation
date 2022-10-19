@@ -1,12 +1,38 @@
 (function ($) {
     "use strict";
     $('.sakura-falling').sakura();
+
 })(jQuery);
 
+let myAudio = document.getElementById("my_audio");
+let soundButton = $("#sound");
+let soundIcon = $("#sound-icon");
+let firstClick = false;
+
+function togglePlay() {
+    if (myAudio.paused) {
+        myAudio.play()
+        soundIcon.removeClass('fa-volume-off');
+        soundIcon.addClass('fa-volume-up');
+    } else {
+        myAudio.pause()
+        soundIcon.addClass('fa-volume-off');
+        soundIcon.removeClass('fa-volume-up');
+    }
+};
 
 $(document).on('click', function () {
-    document.getElementById("my_audio").play();
+    if (!firstClick) {
+        togglePlay();
+        firstClick = true;
+    }
 });
+
+
+soundButton.on('click', function () {
+    togglePlay()
+});
+
 
 // Set the date we're counting down to
 var countDownDate = new Date("Dec 4, 2022 00:00:00").getTime();
